@@ -1,3 +1,4 @@
+#Node
 class Node:
     def __init__(self, data):
         self.data = data
@@ -5,7 +6,7 @@ class Node:
 
     def getData():
         return self.data
-
+#linkedlist
 class linkedlist:
     def __init__(self):
         self.head = None
@@ -53,6 +54,8 @@ if __name__ == '__main__':
     second.next = third
     llist.insertAtStart(0)
     llist.insertAtEnd(4)
+    
+    llist.insertAtEnd(5)
     llist.insertAfter(third,3.5)
     llist.printLinkedList()
     
