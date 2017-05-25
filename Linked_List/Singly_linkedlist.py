@@ -24,7 +24,7 @@ class linkedlist:
             count = count + 1
             temp = temp.next
         return count
-
+    
     def insertAtStart(self,data):
         newNode = Node(data)
         newNode.next = self.head
@@ -44,6 +44,24 @@ class linkedlist:
         newNode.next = prevNode.next
         prevNode.next = newNode
 
+    def deleteAtStart(self):
+        if (self.head == None):
+            print("linked list is empty")
+            return
+        else:
+            temp = self.head.next
+            self.head = temp
+
+    def deleteAtEnd(self):
+        if(self.head == None):
+            print("linked list is empty")
+            return
+        else:
+            temp = self.head
+            while((temp.next).next):
+                temp = temp.next
+            temp.next = None
+
 if __name__ == '__main__':
     llist = linkedlist()
     llist.head = Node(1)
@@ -56,8 +74,11 @@ if __name__ == '__main__':
     llist.insertAtEnd(4)
     
     llist.insertAtEnd(5)
+    llist.deleteAtStart()
     llist.insertAfter(third,3.5)
+    llist.deleteAtEnd()
     llist.printLinkedList()
+    
     
     
     print("length of linked list is ",llist.getLength())
